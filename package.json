@@ -4,7 +4,7 @@
   "description": "Rebuilding the metadata converter tool as a better non-blocking node module. Using this as my own node learning experience. It's probably a mess, so I don't recommend anyone else use this, ha.",
   "main": "app.js",
   "scripts": {
-    "dev": "babel-node src/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
     "build": "babel src --out-dir dist"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/kylegracey/MD-Converter-2#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-preset-env": "^1.4.0"
+    "babel-preset-env": "^1.4.0",
+    "nodemon": "^1.11.0"
   }
 }
