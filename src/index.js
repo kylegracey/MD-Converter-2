@@ -1,3 +1,3 @@
-const foo = 'Hello Foo!';
+const fs = require('fs');
 
-console.log(foo);
+console.log('Script complete.');
