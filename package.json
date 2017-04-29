@@ -1,0 +1,19 @@
+{
+  "name": "metadata-converter-2",
+  "version": "0.2.0",
+  "description": "Rebuilding the metadata converter tool as a better non-blocking node module. Using this as my own node learning experience. It's probably a mess, so I don't recommend anyone else use this, ha.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylegracey/MD-Converter-2.git"
+  },
+  "author": "Kyle Gracey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylegracey/MD-Converter-2/issues"
+  },
+  "homepage": "https://github.com/kylegracey/MD-Converter-2#readme"
+}
