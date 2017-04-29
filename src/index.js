@@ -1,20 +1,21 @@
 const http = require('http');
 const fs = require('fs');
+const url = require('url');
 const readInput = require('./input-reader.js');
 
 function onRequest(request, response) {
   response.writeHead(200, {'Content-Type': 'utf8'});
-
-  function writeCallback(data) {
-    response.write(data);
-  }
 
   function closeCallback() {
     console.log('Stream closed.');
     response.end();
   }
 
-  readInput(writeCallback, closeCallback);
+  if (url.parse(request.url).pathname == '/') {
+    readInput(closeCallback);
+  } else {
+    response.end()
+  }
 
 }
 
