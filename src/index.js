@@ -1,24 +1,23 @@
 const http = require('http');
 const fs = require('fs');
+const readInput = require('./input-reader.js');
 
-//Paths to local files
-const inputSrc = "./json/input.json";
-
-http.createServer(function (request, response) {
-  response.writeHead(200, {'Content-Type': 'text/plain'});
-
-  let read_stream = fs.createReadStream(inputSrc);
-  read_stream.on('data', writeCallback);
-  read_stream.on('close', closeCallback);
+function onRequest(request, response) {
+  response.writeHead(200, {'Content-Type': 'utf8'});
 
   function writeCallback(data) {
-    console.log(data);
+    response.write(data);
   }
 
   function closeCallback() {
     console.log('Stream closed.');
     response.end();
   }
-}).listen(3000, '127.0.0.1');
+
+  readInput(writeCallback, closeCallback);
+
+}
+
+http.createServer(onRequest).listen(3000, '127.0.0.1');
 
 console.log('Server started.');
